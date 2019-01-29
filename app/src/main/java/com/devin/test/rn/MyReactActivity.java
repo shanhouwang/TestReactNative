@@ -11,15 +11,12 @@ import com.facebook.react.shell.MainReactPackage;
 
 public class MyReactActivity extends Activity implements DefaultHardwareBackBtnHandler {
 
-    private ReactRootView mReactRootView;
-    private ReactInstanceManager mReactInstanceManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mReactRootView = new ReactRootView(this);
-        mReactInstanceManager = ReactInstanceManager.builder()
+        ReactRootView mReactRootView = new ReactRootView(this);
+        ReactInstanceManager mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index")
